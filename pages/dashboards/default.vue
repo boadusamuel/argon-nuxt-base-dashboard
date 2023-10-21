@@ -357,7 +357,7 @@ import InfoCard from "~~/pagesComponents/dashboards/default/InfoCard.vue";
 
 definePageMeta({
     layout: "default",
-    // middleware: ["auth"],
+    middleware: ["auth"],
 });
 const cardData = [
     {

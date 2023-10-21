@@ -305,48 +305,14 @@
           </template>
         </sidenav-collapse>
       </li>
-      <li class="nav-item">
-        <sidenav-collapse
-          nav-text="Changelog"
-          :collapse="false"
-          url="#"
-          :aria-controls="''"
-          collapse-ref="https://github.com/creativetimofficial/ct-vue-argon-dashboard-pro/blob/main/CHANGELOG.md"
-        >
-          <template #icon>
-            <i class="ni ni-align-left-2 text-sm" :class="sidenavType"></i>
-          </template>
-        </sidenav-collapse>
-      </li>
     </ul>
   </div>
   <div class="mt-3 sidenav-footer">
-    <SidenavCard
-      :card="{
-        title: 'Need Help?',
-        description: 'Please check our docs',
-        links: [
-          {
-            label: 'Documentation',
-            route:
-              'https://www.creative-tim.com/learning-lab/vue/overview/argon-dashboard/',
-            color: 'dark',
-          },
-          {
-            label: 'Buy now',
-            route:
-              'https://www.creative-tim.com/product/nuxt-argon-dashboard-pro-laravel?ref=vadp',
-            color: 'success',
-          },
-        ],
-      }"
-    />
   </div>
 </template>
 <script setup>
 import SidenavCollapse from "./SidenavCollapse.vue";
 import SidenavCollapseItem from "./SidenavCollapseItem.vue";
-import SidenavCard from "./SidenavCard.vue";
 import SidenavItem from "./SidenavItem.vue";
 import { useNavStore } from "~~/stores/NavStore";
 const navStore = useNavStore();

@@ -8,14 +8,14 @@
       <Footer />
       <Configurator />
     </main>
+
+
   </div>
 </template>
 
 <script setup>
-import Sidenav from "~~/examples/Sidenav";
 import Footer from "~~/examples/Footer";
 import Configurator from "~~/examples/Configurator";
-import AragonNavbar from "~/components/AragonNavbar.vue";
 
 import { useNavStore } from "~~/stores/NavStore";
 import setTooltip from "~~/assets/js/tooltip";

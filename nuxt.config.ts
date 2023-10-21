@@ -1,6 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
+
   app: {
     head: {
       title: "Project Game",
@@ -40,21 +41,31 @@ export default defineNuxtConfig({
 
   components: {
     global: true,
-    dirs: ["~/components/Icons", "~/components"],
+    dirs: ["~/components/Icons", "~/components/"],
   },
+
   imports: {
     autoImport: true,
   },
+
   css: [
     "@/assets/css/nucleo-svg.css",
     "@/assets/css/nucleo-icons.css",
     "@/assets/scss/argon-dashboard.scss",
   ],
+
   modules: ["@pinia/nuxt"],
+
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL,
       isDemo: process.env.IS_DEMO,
     }
-  }
+  },
+  devtools: {
+    enabled: true
+  },
+  sourcemap: {
+    client: true
+  },
 });

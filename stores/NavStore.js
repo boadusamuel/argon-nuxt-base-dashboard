@@ -11,6 +11,7 @@ export const useNavStore = defineStore("NavStore", {
       sidenavType: 'bg-white',
       navFixed: false,
       darkMode: false,
+      showSideBar: true
     };
   },
 
@@ -33,5 +34,8 @@ export const useNavStore = defineStore("NavStore", {
     toggleNavFixed() {
       this.navFixed = !this.navFixed;
     },
+    toggleShowSideBar() {
+      this.showSideBar = !this.showSideBar
+    }
   },
 });

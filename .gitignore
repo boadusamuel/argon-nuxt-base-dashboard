@@ -9,3 +9,6 @@ dist
 yarn.lock
 pnpm-lock.yaml
 package-lock.json
+client_ chrome.run.xml
+nuxt.run.xml
+vcs.xml

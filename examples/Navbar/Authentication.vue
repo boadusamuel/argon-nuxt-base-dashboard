@@ -3,7 +3,7 @@
         :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'">
         <div class="container ps-2 pe-0">
             <NuxtLink class="navbar-brand font-weight-bolder ms-lg-0 ms-3" :class="darkMode ? 'text-black' : 'text-white'">
-                Nuxt Argon Dashboard 2 Laravel</NuxtLink>
+                Game For All</NuxtLink>
             <ul class="navbar-nav navbar-nav-hover" style="margin-right: 100px;">
                 <li class="mx-2 nav-item">
                     <NuxtLink class="mb-1 dropdown-item ps-3 border-radius-md" to="/login">
@@ -27,7 +27,7 @@
                     <a href="https://www.creative-tim.com/product/nuxt-argon-dashboard-laravel"
                         target="_blank"
                         class="mb-0 btn btn-sm me-1" :class="btnBackground ? btnBackground : 'bg-white text-dark'"
-                        onclick="smoothToPricing('pricing-soft-ui')">Free Download</a>
+                       >Join</a>
                 </li>
             </ul>
         </div>

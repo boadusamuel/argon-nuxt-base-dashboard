@@ -179,7 +179,9 @@ const submitForm = async () => {
         }
     } else {
         try {
+          console.log('Request sent to registration server');
             await authStore.register(formData);
+            console.log('Response from registration server')
             router.push({ path: "/dashboards/default" })
         } catch (error) {
             await useToast("error", error.message);

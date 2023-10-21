@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "nuxt-argon-dashboard-2-pro",
   "version": "2.0.0",
   "private": true,

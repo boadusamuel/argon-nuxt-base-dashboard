@@ -10,11 +10,9 @@ export const useAuthStore = defineStore("AuthStore", {
     actions: {
         async login({ email, password }) {
             await authService.login(email, password);
-            this.getProfile();
         },
         async register({ name, email, password, passwordConfirm }) {
             await authService.register(name, email, password, passwordConfirm);
-            this.getProfile();
         },
         async logout() {
             await authService.logout();
