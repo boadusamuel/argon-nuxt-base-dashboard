@@ -6,6 +6,7 @@
       type="checkbox"
       :name="name"
       :checked="checked"
+      @change="toggleChecked"
     />
     <label :for="id" class="custom-control-label" :class="$attrs.class">
       <slot />
@@ -28,6 +29,11 @@ export default {
     checked: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    toggleChecked() {
+      this.$emit("update:checked", !this.checked);
     },
   },
 };
