@@ -4,37 +4,16 @@
       class="collapse navbar-collapse w-auto h-auto h-100"
   >
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <SidenavCollapse
-            collapse-ref="dashboardsExamples"
-            nav-text="Dashboards"
-            :class="getRoute === 'dashboards' ? 'active' : ''"
-        >
-          <template #icon>
-            <i class="ni ni-shop text-primary text-sm opacity-10"></i>
-          </template>
-          <template #list>
-            <ul class="nav ms-4">
-              <SidenavItem
-                  to="/dashboards/default"
-                  mini-icon="D"
-                  text="Default"
-              />
-            </ul>
-          </template>
-        </SidenavCollapse>
+      <li class="nav-item d-flex align-items-center">
+        <SidenavSingleItem :is-active="getRoute === '/dashboards/default'" to="/dashboards/default" text="Dashboard">
+          <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+        </SidenavSingleItem>
       </li>
-      <li class="mt-3 nav-item">
-        <h6
-            class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
-            :class="isRTL ? 'me-4' : 'ms-2'"
-        >
-          PAGES
-        </h6>
-      </li>
+
+
       <li class="nav-item">
         <sidenav-collapse collapse-ref="apiExamples" nav-text="Examples (API)"
-                          :class="getRoute === 'examples' ? 'active' : ''">
+                          :class="getRoute === '/examples/user-profile' ? 'active' : '' || getRoute === '/examples/user-management/list-users' ? 'active' : ''">
           <template #icon>
             <i class="fab fa-vuejs text-success text-sm opacity-10"></i>
           </template>
@@ -46,21 +25,21 @@
           </template>
         </sidenav-collapse>
       </li>
-      <li class="nav-item d-flex align-items-center">
-        <SidenavItem to="/pages/charts" mini-icon="C" text="Charts">
+      <li class="nav-item d-flex align-items-center" >
+        <SidenavSingleItem  to="/pages/charts" :is-active="getRoute === '/pages/charts'" text="Charts">
           <i class="ni ni-chart-bar-32 text-warning text-sm opacity-10"></i>
-        </SidenavItem>
+        </SidenavSingleItem>
       </li>
 
       <li class="nav-item d-flex align-items-center">
-        <SidenavItem to="/applications/data-tables" mini-icon="D" text="Data Tables">
+        <SidenavSingleItem :is-active="getRoute === '/applications/data-tables'" to="/applications/data-tables" text="Data Tables">
           <i class="ni ni-align-left-2 text-info text-sm opacity-10"></i>
-        </SidenavItem>
+        </SidenavSingleItem>
       </li>
       <li class="nav-item d-flex align-items-center">
-        <SidenavItem to="/pages/widgets" mini-icon="W" text="Widgets">
+        <SidenavSingleItem :is-active="getRoute === '/pages/widgets'" to="/pages/widgets" text="Widgets">
           <i class="ni ni-ungroup text-success text-sm opacity-10"></i>
-        </SidenavItem>
+        </SidenavSingleItem>
       </li>
 
     </ul>
@@ -81,7 +60,9 @@ const sidenavType = computed(() => {
 });
 const getRoute = computed(() => {
   const route = useRoute();
-  return route.path.split("/")[1];
+  console.log(route.path)
+  return route.path
+
 });
 defineProps({
   isRTL: {

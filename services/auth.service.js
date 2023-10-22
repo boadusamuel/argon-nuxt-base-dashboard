@@ -7,6 +7,9 @@ const dataFormatter = new Jsona();
 const login = async (email, password) => {
   try {
     clearNuxtData();
+
+    return  localStorage.setItem("authToken", 'token');
+
     const body = dataFormatter.serialize({
       stuff: {
         type: "token",
@@ -86,14 +89,16 @@ const logout = async () => {
 
 const getProfile = async () => {
   const access_token = localStorage.getItem("authToken");
-  const profileResponse = await useFetch(`${apiBaseUrl}/me`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
 
-  return dataFormatter.deserialize(profileResponse.data.value);
+  return {};
+  // const profileResponse = await useFetch(`${apiBaseUrl}/me`, {
+  //   method: "GET",
+  //   headers: {
+  //     Authorization: `Bearer ${access_token}`,
+  //   },
+  // });
+  //
+  // return dataFormatter.deserialize(profileResponse.data.value);
 };
 
 const updateProfile = async (userId, body) => {
