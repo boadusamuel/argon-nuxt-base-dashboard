@@ -75,7 +75,7 @@
                   @click="showProfile = !showProfile"
               >
                 <img :src="defaultAvatar" class="avatar rounded-circle mx-2"  alt="auth user"/>
-                <span class="d-sm-inline d-none">{{ authStore.currentUser?.name }}</span>
+                <span class="d-sm-inline d-none">{{ authStore.currentUser?.name  }}</span>
               </a>
               <ul
                   class="px-2 py-3 dropdown-menu dropdown-menu-end me-sm-n4"
@@ -323,8 +323,8 @@ const handleLogout = async () => {
 
   #navbar{
     display: flex;
-    justify-content: end;
-    align-items: end;
+    //justify-content: end;
+    //align-items: end;
   }
 
   .fa-cog{

@@ -1,26 +1,10 @@
 <template>
     <NuxtLayout name="authentication">
-        <template #navbar>
-            <NavbarAuthentication is-blur="blur border-radius-lg my-3 py-2 start-0 end-0 mx-4 shadow"
-                btn-background="bg-gradient-success" :dark-mode="true" />
-        </template>
         <div class="page-header min-vh-100"
             style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-basic.jpg');">
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container mt-8 mb-4">
-                <div class="row justify-content-center">
-                    <div class="text-center" style="margin-bottom: 5px;">
-                        <h3 class="text-white">Log in to Nuxt Argon Dashboard 2 Laravel Live Preview</h3>
-                        <p class="text-lead text-white">Log in to see how you can save more than 300 hours of work with an
-                            integrated Laravel API backend and ready-made components.</p>
-                    </div>
-                    <div class="text-center text-white" style="margin-bottom: 20px;">
-                        <h5 class="text-white">
-                            <strong>You can log in with 1 user type:</strong>
-                        </h5>
-                        <div>Username <b>admin@jsonapi.com</b> Password <b>secret</b></div>
-                    </div>
-                </div>
+
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-7 mt-2">
                         <div class="card border-0 mb-0">
