@@ -1,8 +1,4 @@
 <template>
-    <ArgonAlert class="mx-4 p-3 mt-4" color="danger">
-        Add, Edit, Delete features are not functional. This is a PRO feature! Click
-        <a href="https://www.creative-tim.com/product/nuxt-argon-dashboard-pro-laravel" target="_blank" class="text-dark font-weight-bolder">here</a> to see the PRO product.
-    </ArgonAlert>
     <div class="card shadow-lg mx-4 p-3 mt-4">
         <div class="d-flex justify-content-between px-4 pt-3">
             <h5 class="font-weight-bolder mb-0">Users List</h5>
@@ -42,12 +38,23 @@
                 </table>
             </div>
         </div>
+
+
+              <vue-awesome-paginate
+                  :total-items="totalEntries"
+                  v-model="currentPage"
+                  :items-per-page="entriesPerPage"
+                  :max-pages-shown="5"
+                  :on-click="clickHandler"
+              />
+
     </div>
 </template>
 
 
 <script setup>
-import { DataTable } from "simple-datatables";
+import {DataTable} from "simple-datatables";
+
 definePageMeta({
     middleware: ["auth"],
 });
@@ -82,4 +89,15 @@ const handleButtons = () => {
         });
     });
 }
+
+const currentPage = ref(1);
+const totalEntries = ref(30);
+const entriesPerPage = ref(10);
+
+const clickHandler = (page) => {
+  console.log(page);
+
+};
+
+
 </script>
